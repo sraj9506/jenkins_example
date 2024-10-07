@@ -9,7 +9,7 @@ pipeline {
         {
             steps
             {
-                git url: 'https://github.com/sraj9506/jenkins_example'
+                git branch: 'main', url: 'https://github.com/sraj9506/jenkins_example'
             } 
         }
         stage('Build')
