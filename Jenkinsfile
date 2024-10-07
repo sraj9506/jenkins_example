@@ -9,7 +9,7 @@ pipeline {
         {
             steps
             {
-                git credentialsId: 'gitcredentials', url: 'https://github.com/sraj9506/jenkins_example'
+                git url: 'https://github.com/sraj9506/jenkins_example'
             } 
         }
         stage('Build')
