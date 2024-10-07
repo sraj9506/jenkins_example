@@ -1,7 +1,6 @@
 pipeline {
     agent any
     environment{
-        DOCKER_REGISTRY='https://docker.io'
         DOCKER_CREDENTIALS_ID='docker_credentials'
     }
     stages {
@@ -28,9 +27,9 @@ pipeline {
             {
                 script
                 {
-                    docker.withRegistry("${DOCKER_REGISTRY}","${DOCKER_CREDENTIALS_ID}")
+                    docker.withRegistry("","${DOCKER_CREDENTIALS_ID}")
                     {
-                        dockerImage.push("${env.BUILD_NUMBER}")
+                        dockerImage.push()
                     }
                 }
             }
